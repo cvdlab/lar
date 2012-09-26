@@ -1,15 +1,13 @@
-# Linear Algebra Representation
-
-
-## Installation
-
-    $ npm install {{project.name}}
+# LAR
+  
+  Linear Algebra Representation Framework
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2012 {{author.name}} &lt;{{author.email}}&gt; ({{author.site}})
+Copyright (c) 2012 Enrico Marino &lt;enrico.marino@email.com&gt;
+Copyright (c) 2012 Federico Spini &lt;federico.spini@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
