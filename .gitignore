@@ -3,3 +3,6 @@
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# npm dependencies
+node_modules

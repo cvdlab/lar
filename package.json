@@ -4,18 +4,21 @@
     "email": "{{author.email}}",
     "site": "{{author.site}}"
   },
-  "name": "{{project.name}}",
-  "description": "{{project.description}}",
+  "name": "lar",
+  "description": "Linear Algebra Representation Framework",
   "version": "0.0.0",
-  "homepage": "https://github.com/{{author.github}}/{{project.name}}",
+  "homepage": "https://github.com/cvdlab/lar",
   "repository": {
     "type": "git",
-    "url": "git://github.com/{{author.github}}/{{project.name}}.git"
+    "url": "git://git@github.com/cvdlab/lar.git"
   },
   "main": "index.js",
   "engines": {
     "node": "*"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "1.x.x",
+    "should": "1.x.x"
+  }
 }
