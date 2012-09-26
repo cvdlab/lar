@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "{{author.name}}",
+    "email": "{{author.email}}",
+    "site": "{{author.site}}"
+  },
+  "name": "{{project.name}}",
+  "description": "{{project.description}}",
+  "version": "0.0.0",
+  "homepage": "https://github.com/{{author.github}}/{{project.name}}",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/{{author.github}}/{{project.name}}.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
