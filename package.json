@@ -16,7 +16,9 @@
   "engines": {
     "node": "*"
   },
-  "dependencies": {},
+  "dependencies": {
+    "numeric": "1.x.x"
+  },
   "devDependencies": {
     "mocha": "1.x.x",
     "should": "1.x.x"
