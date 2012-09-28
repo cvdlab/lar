@@ -2,6 +2,12 @@
   
   Linear Algebra Representation Framework
 
+## Installation
+
+    $ git clone git@github.com:cvdlab/lar.git
+    $ cd lar
+    $ npm install -d
+
 ## License
 
 (The MIT License)
