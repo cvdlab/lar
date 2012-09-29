@@ -6,25 +6,25 @@ describe('op', function () {
     it('should extract vertices from one edge', function () {
       var cells = [[0,1]];
       var expected =  [[0],[1]];
-      var extractedCells = lar.op.extract(cells);
+      var extracted = lar.op.extract(cells);
       
-      extractedCells.should.eql(expected);
+      extracted.should.eql(expected);
     });
 
     it('should extract edges from one triangle', function () {
       var cells = [[0,1,2]];
       var expected =  [[0,1],[0,2],[1,2]];
-      var extractedCells = lar.op.extract(cells);
+      var extracted = lar.op.extract(cells);
       
-      extractedCells.should.eql(expected);
+      extracted.should.eql(expected);
     });
 
     it('should extract edges from two triangles', function () {
       var cells = [[0,1,3],[1,2,3]];
       var expected =  [[0,1],[0,3],[1,2],[1,3],[2,3]];
-      var extractedCells = lar.op.extract(cells);
+      var extracted = lar.op.extract(cells);
       
-      extractedCells.should.eql(expected);
+      extracted.should.eql(expected);
     });
 
     it('should extract triangles from one tetrahedron', function () {
@@ -41,4 +41,14 @@ describe('op', function () {
   describe('combine', function () { ; });
 
   describe('extract0', function () { ; });
+
+  describe('boundarize', function () {
+    it('should boundarize matrix', function () {
+      var matrix = [[2,0,1,2,4],[0,3,1,0,0],[4,4,0,0,3],[6,0,1,3,6],[0,0,0,2,0]];
+      var expected =  [[0,0,0,0,1],[0,1,0,0,0],[1,1,0,0,0],[1,0,0,0,1],[0,0,0,1,0]];
+      var calculated = lar.op.boundarize(matrix);
+      
+      calculated.should.eql(expected);
+    });
+  });
 });
