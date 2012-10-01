@@ -2,6 +2,17 @@ var should = require('should');
 var lar = require('../lib/lar.js').lar;
 
 describe('utils', function () {
+  describe('select', function () {
+    it('should select any rows from a matrix', function () { 
+      var matrix = [[0,1,3,4],[1,2,3,4],[3,5,6,7],[5,9,0,1]];
+      var selector = [0,1,0,1];
+      var expected =  [[1,2,3,4],[5,9,0,1]];
+      var calculated = lar.utils.select(matrix,selector);
+
+      calculated.should.eql(expected);
+    });
+  });
+
   describe('binarize', function () {
     it('should binarize matrix', function () { 
       var matrix = [[0,1,3,4],[1,2,3,4]];
