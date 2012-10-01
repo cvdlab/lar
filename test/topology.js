@@ -14,7 +14,7 @@ describe('Topology', function () {
       var expected_c02 = numeric.transpose(expected_c20);
       var expected_c10 = [[1,1,0,0,0],[1,0,0,1,0],[1,0,0,0,1],[0,1,1,0,0],[0,1,0,1,0],[0,1,0,0,1],[0,0,1,1,0],[0,0,1,0,1],[0,0,0,1,1]];
       var expected_c01 =  numeric.transpose(expected_c10);
-      var expected_c00 = lar.op.extract0(expected_c10);
+      var expected_c00 = lar.ops.extract0(expected_c10);
 
       t.get(3,0).should.eql(expected_c30);
       t.get(0,3).should.eql(expected_c03);
@@ -35,7 +35,7 @@ describe('Topology', function () {
       var expected_c02 = numeric.transpose(expected_c20);
       var expected_c10 = [[1,1,0,0,0],[1,0,0,1,0],[1,0,0,0,1],[0,1,1,0,0],[0,1,0,1,0],[0,1,0,0,1],[0,0,1,1,0],[0,0,1,0,1],[0,0,0,1,1]];
       var expected_c01 =  numeric.transpose(expected_c10);
-      var expected_c00 = lar.op.extract0(expected_c10);
+      var expected_c00 = lar.ops.extract0(expected_c10);
 
       t.get(3,0).should.eql(expected_c30);
       t.get(0,3).should.eql(expected_c03);
