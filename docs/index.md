@@ -73,7 +73,7 @@ Return i-boundary of the given (i+1)-chain.
 @param {number} i 
 @param {Array} [(i+1)-chain=[1,1,1,1,...]]
 @return {lar.Model} boundary of given (i+1)-chain
-
+```
 
 ### extrude
 
