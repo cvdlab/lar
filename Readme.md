@@ -12,6 +12,10 @@
     
     $ make test
 
+## Documentation
+    
+    [Docs](https://github.com/cvdlab/lar/blob/master/docs/index.md)
+
 ## License
 
 (The MIT License)
