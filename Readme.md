@@ -8,6 +8,10 @@
     $ cd lar
     $ npm install -d
 
+## Test
+    
+    $ make test
+
 ## License
 
 (The MIT License)
