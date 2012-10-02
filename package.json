@@ -1,12 +1,24 @@
 {
   "author": {
-    "name": "{{author.name}}",
-    "email": "{{author.email}}",
-    "site": "{{author.site}}"
+    "name" : "cvdlab",
+    "email" : "cvdlab@email.com",
+    "url" : "https://github.com/cvdlab/"
   },
+  "contributors": [ 
+    {
+      "name": "Enrico Marino",
+      "email": "enrico.marino@email.com",
+      "url": "http://onirame.no.de"
+    },
+    {
+      "name": "Federico Spini",
+      "email": "federico.spini@gmail.com",
+      "url": "http://spini.no.de"
+    }
+  ],
   "name": "lar",
-  "description": "Linear Algebra Representation Framework",
-  "version": "0.0.0",
+  "description": "Linear Algebraic Representation Framework",
+  "version": "0.1.0",
   "homepage": "https://github.com/cvdlab/lar",
   "repository": {
     "type": "git",
