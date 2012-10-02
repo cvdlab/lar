@@ -36,7 +36,23 @@ describe('ops', function () {
     });
   });
 
-  describe('extrude', function () { ; });
+  describe('extrude', function () {
+    it('should extrude one triangle', function () {
+      var cells = [[0,1,2]];
+      var expected =  [[0,1,2,3],[1,2,3,4],[2,3,4,5]];
+      var extrudedCells = lar.ops.extrude(cells);
+      
+      extrudedCells.should.eql(expected);
+    });
+
+    it('should extrude three triangles', function () {
+      var cells = [[0,1,2],[1,2,3],[1,3,4]];
+      var expected =  [[0,1,2,5],[1,2,5,6],[2,5,6,7],[1,2,3,6],[2,3,6,7],[3,6,7,8],[1,3,4,6],[3,4,6,8],[4,6,8,9]];
+      var extrudedCells = lar.ops.extrude(cells);
+      
+      extrudedCells.should.eql(expected);
+    });
+  });
 
   describe('combine', function () { ; });
 
