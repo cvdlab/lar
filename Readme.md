@@ -1,6 +1,20 @@
 # LAR
   
-  Linear Algebra Representation Framework
+  Linear Algebraic Representation Framework
+
+## Installation
+
+    $ git clone git@github.com:cvdlab/lar.git
+    $ cd lar
+    $ npm install -d
+
+## Test
+    
+    $ make test
+
+## Documentation
+    
+    [Docs](https://github.com/cvdlab/lar/blob/master/docs/index.md)
 
 ## License
 
