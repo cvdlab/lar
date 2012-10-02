@@ -1,6 +1,6 @@
 # LAR
   
-  Linear Algebra Representation Framework
+  Linear Algebraic Representation Framework
 
 ## Installation
 
