@@ -14,7 +14,7 @@
 
 ## Documentation
     
-    [Docs](https://github.com/cvdlab/lar/blob/master/docs/index.md)
+See [documentation](https://github.com/cvdlab/lar/blob/master/docs/index.md).
 
 ## License
 
