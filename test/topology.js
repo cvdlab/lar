@@ -4,7 +4,20 @@ var lar = require('../lib/lar.js').lar;
 
 describe('Topology', function () {
   describe('constructor', function () {
-    it('should instantiate a new Topology', function () {
+    it('should instantiate a new 1D Topology', function () {
+      var cells = [[0,1],[1,2],[2,3],[3,4]];
+      var t = new lar.Topology(cells);
+
+      var expected_c10 = [[1,1,0,0,0],[0,1,1,0,0],[0,0,1,1,0],[0,0,0,1,1]];
+      var expected_c01 =  numeric.transpose(expected_c10);
+      var expected_c00 = lar.ops.extract0(expected_c10);
+
+      t.get(1,0).should.eql(expected_c10);
+      t.get(0,1).should.eql(expected_c01);
+      t.get(0,0).should.eql(expected_c00);
+    });
+
+    it('should instantiate a new 3D Topology', function () {
       var cells = [[0,1,3,4],[1,4,3,2]];
       var t = new lar.Topology(cells);
 

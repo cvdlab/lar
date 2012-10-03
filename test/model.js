@@ -3,6 +3,26 @@ var numeric = require('numeric');
 var lar = require('../lib/lar.js').lar;
 
 describe('Model', function () {
+  describe('constructor', function () {
+    it('should instantiate a new 1D Model', function () {
+      var cells = [[0,1],[1,2],[2,3],[3,4]];
+      var vertices = [[0],[1],[2],[3],[4]];
+      var m = new lar.Model(vertices, cells);
+
+      var t = m.topology;
+      var expected_c10 = [[1,1,0,0,0],[0,1,1,0,0],[0,0,1,1,0],[0,0,0,1,1]];
+      var expected_c01 =  numeric.transpose(expected_c10);
+      var expected_c00 = lar.ops.extract0(expected_c10);
+
+      m.vertices.should.eql(vertices);
+      m.cells.should.eql(cells);
+      m.empty.should.be.false;
+      t.get(1,0).should.eql(expected_c10);
+      t.get(0,1).should.eql(expected_c01);
+      t.get(0,0).should.eql(expected_c00);
+    });
+  });
+
    describe('getCells', function () {
     it('should extract a 1-chain from a 2d Model', function () {
       var cells = [[0,4,2],[4,2,3],[2,3,1]];
@@ -62,6 +82,23 @@ describe('Model', function () {
       var b2 = b1.boundary(1);
 
       b2.isEmpty().should.be.true;
+    });
+  });
+  
+  describe('extrude', function () {
+    it('should extrude a 1d Model', function () {
+      var m1Vertices = [[0],[1],[2],[3]];
+      var m1Cells = [[0,1],[1,2],[2,3]];
+      var m1 = new lar.Model(m1Vertices, m1Cells);
+      var m2 = m1.extrude(2);
+      var m2Vertices = m2.vertices;
+      var m2Cells = m2.sortedCells;
+
+      var expectedVertices = [[0,0],[1,0],[2,0],[3,0],[0,2],[1,2],[2,2],[3,2]];
+      var expectedCells = [[0,1,4],[1,2,5],[1,4,5],[2,3,6],[2,5,6],[3,6,7]];
+
+      m2Vertices.should.eql(expectedVertices);
+      m2Cells.should.eql(expectedCells);
     });
   });
 });
