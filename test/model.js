@@ -90,12 +90,48 @@ describe('Model', function () {
       var m1Vertices = [[0],[1],[2],[3]];
       var m1Cells = [[0,1],[1,2],[2,3]];
       var m1 = new lar.Model(m1Vertices, m1Cells);
-      var m2 = m1.extrude(2);
+      var m2 = m1.extrude([2]);
       var m2Vertices = m2.vertices;
       var m2Cells = m2.sortedCells;
 
       var expectedVertices = [[0,0],[1,0],[2,0],[3,0],[0,2],[1,2],[2,2],[3,2]];
       var expectedCells = [[0,1,4],[1,2,5],[1,4,5],[2,3,6],[2,5,6],[3,6,7]];
+
+      m2Vertices.should.eql(expectedVertices);
+      m2Cells.should.eql(expectedCells);
+    });
+
+    it('should extrude a triangle', function () {
+      var m1Vertices = [[0,0],[0,1],[1,0]];
+      var m1Cells = [[0,1,2]];
+      var m1 = new lar.Model(m1Vertices, m1Cells);
+      var m2 = m1.extrude([2,2]);
+      var m2Vertices = m2.vertices;
+      var m2Cells = m2.sortedCells;
+
+      var expectedVertices = [[0,0,0],[0,1,0],[1,0,0],
+                              [0,0,2],[0,1,2],[1,0,2],
+                              [0,0,4],[0,1,4],[1,0,4]];
+      var expectedCells = [[0,1,2,3],[1,2,3,4],[2,3,4,5],[3,4,5,6],[4,5,6,7],[5,6,7,8]];
+
+      m2Vertices.should.eql(expectedVertices);
+      m2Cells.should.eql(expectedCells);
+    });
+
+    it('should extrude a triangle (negative quotes)', function () {
+      var m1Vertices = [[0,0],[0,1],[1,0]];
+      var m1Cells = [[0,1,2]];
+      var m1 = new lar.Model(m1Vertices, m1Cells);
+      var m2 = m1.extrude([2,-2,2]);
+      var m2Vertices = m2.vertices;
+      var m2Cells = m2.sortedCells;
+
+      var expectedVertices = [[0,0,0],[0,1,0],[1,0,0],
+                              [0,0,2],[0,1,2],[1,0,2],
+                              [0,0,4],[0,1,4],[1,0,4],
+                              [0,0,6],[0,1,6],[1,0,6]];
+      var expectedCells = [[0,1,2,3],[1,2,3,4],[2,3,4,5],
+                           [6,7,8,9],[7,8,9,10],[8,9,10,11]];
 
       m2Vertices.should.eql(expectedVertices);
       m2Cells.should.eql(expectedCells);
