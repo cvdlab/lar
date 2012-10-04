@@ -77,7 +77,10 @@ Return i-boundary of the given (i+1)-chain.
 
 ### extrude
 
-Extrude model by h quote.
+Extrude model by a list of quotes.
+Negative list values stand for empty step.
+No consecutive negetive values allowed.
+First quote in the list must be positive.
 
 ```
 @param {Number} heigth
