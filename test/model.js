@@ -39,7 +39,7 @@ describe('Model', function () {
       var cells = [[0,4,2],[4,2,3],[2,3,1]];
       var vertices = [[0,0],[2,0],[3,1],[4,0],[1,1]];
       var m = new lar.Model(vertices, cells);
-      var d_chain = m.getChain(1,[0,1,1,0,1,0,0]);
+      var d_chain = m.getChain(1, [0,3,5,6], false);
       var expectedChain = [[0,4],[1,2],[2,3]];
       expectedChain.should.eql(d_chain);
     });
@@ -50,7 +50,7 @@ describe('Model', function () {
       var cells = [[0,1,2],[1,2,3]];
       var vertices = [[0,0],[0,1],[0.5,1],[1.5,1]];
       var m = new lar.Model(vertices, cells);
-      var boundary = m.boundary(1, [0,1]);
+      var boundary = m.boundary(2, [1]);
       var t = boundary.topology;
       
       var expected_c10 = [[0,1,1,0],[0,1,0,1],[0,0,1,1]];
@@ -67,7 +67,7 @@ describe('Model', function () {
       var cells = [[0,1,2,3],[1,2,3,4]];
       var vertices = [[2.5,2.5,5],[0,0,0],[5,0,0],[5,5,0],[2.5,2.5,-5]];
       var m = new lar.Model(vertices, cells);
-      var b = m.boundary(1, [0,0,0,1,0,0,0]);
+      var b = m.boundary(2, [3]);
       var boundaryCells = b.getCells(1);
       var expectedboudnaryCells = [[1,2],[1,3],[2,3]];
 
@@ -78,8 +78,8 @@ describe('Model', function () {
       var cells = [[0,1,2,3],[1,2,3,4]];
       var vertices = [[2.5,2.5,5],[0,0,0],[5,0,0],[5,5,0],[2.5,2.5,-5]];
       var m = new lar.Model(vertices, cells);
-      var b1 = m.boundary(2);
-      var b2 = b1.boundary(1);
+      var b1 = m.boundary(3);
+      var b2 = b1.boundary(2);
 
       b2.isEmpty().should.be.true;
     });
