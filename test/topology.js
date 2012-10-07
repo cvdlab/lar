@@ -2,6 +2,8 @@ var should = require('should');
 var numeric = require('numeric');
 var lar = require('../lib/lar.js').lar;
 
+lar.sparse = false;
+
 describe('Topology', function () {
   describe('constructor', function () {
     it('should instantiate a new 1D Topology', function () {
