@@ -1,6 +1,8 @@
 var should = require('should');
 var lar = require('../lib/lar.js').lar;
 
+lar.sparse = false;
+
 describe('ops', function () {
   describe('extract', function () {
     it('should extract vertices from one edge', function () {
